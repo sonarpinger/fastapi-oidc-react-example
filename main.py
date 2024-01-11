@@ -70,6 +70,6 @@ async def auth(request: Request):
 async def home(request: Request):
     user = request.session.get('user', None)
     if user is not None:
-        return templates.TemplateResponse('home.html', {'request': request, 'user': dict(user)})
+        return templates.TemplateResponse('index.html', {'request': request})
     else:
         return RedirectResponse(f'{settings.BASE_URL}/login/')
