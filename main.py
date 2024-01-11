@@ -73,3 +73,7 @@ async def home(request: Request):
         return templates.TemplateResponse('index.html', {'request': request})
     else:
         return RedirectResponse(f'{settings.BASE_URL}/login/')
+
+if __name__ == "__main__":
+  print("only for development use!")
+  uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
